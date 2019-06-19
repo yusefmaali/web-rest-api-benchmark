@@ -1,0 +1,7 @@
+API_HOST,API_PORT
+dotnet-core,80
+python-django,8000
+node-express,3000
+go-mux,8000
+php-laravel,80
+java-spring,8080

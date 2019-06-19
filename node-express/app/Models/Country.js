@@ -3,12 +3,12 @@ const Model = bookshelf.Model;
 
 class Country extends Model
 {
-	get tableName() {
-		return 'Country';
+    get tableName() {
+		return 'countries';
 	}
 
 	users() {
-		return this.belongsToMany('User', 'UserCountryMapping', 'countryId', 'userId');
+		return this.belongsToMany('User', 'user_country_mapping', 'country_id', 'user_id');
 	}
 }
 

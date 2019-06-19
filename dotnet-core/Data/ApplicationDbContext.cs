@@ -21,17 +21,17 @@ namespace dotnet_core.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<UserCountryMapping>()
-                .HasKey(uc => new { uc.userId, uc.countryId });
+                .HasKey(uc => new { uc.user_id, uc.country_id });
 
             builder.Entity<UserCountryMapping>()
                 .HasOne(uc => uc.user)
                 .WithMany(u => u.userCountryMappings)
-                .HasForeignKey(uc => uc.userId);
+                .HasForeignKey(uc => uc.user_id);
 
             builder.Entity<UserCountryMapping>()
                 .HasOne(uc => uc.country)
                 .WithMany(c => c.userCountryMappings)
-                .HasForeignKey(uc => uc.countryId);
+                .HasForeignKey(uc => uc.country_id);
         }
     }
 }

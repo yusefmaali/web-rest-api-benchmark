@@ -1,41 +1,30 @@
+HELP.md
 .gradle
-*.sw?
-.#*
-*#
-*~
-/build
-/code
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+### STS ###
+.apt_generated
 .classpath
+.factorypath
 .project
 .settings
-.metadata
-.factorypath
-.recommenders
-bin
-build
-lib/
-target
-.factorypath
 .springBeans
-interpolated*.xml
-dependency-reduced-pom.xml
-build.log
-_site/
-.*.md.html
-manifest.yml
-MANIFEST.MF
-settings.xml
-activemq-data
-overridedb.*
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
 *.iml
 *.ipr
-*.iws
-.idea
-*.jar
-.DS_Store
-.factorypath
-dump.rdb
-transaction-logs
+/out/
 
-# Allow
-!.mvn/wrapper/maven-wrapper.jar
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/

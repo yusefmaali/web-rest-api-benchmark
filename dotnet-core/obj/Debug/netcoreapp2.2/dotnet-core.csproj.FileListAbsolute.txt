@@ -1,0 +1,14 @@
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.csprojAssemblyReference.cache
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.csproj.CoreCompileInputs.cache
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.RazorAssemblyInfo.cache
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.RazorAssemblyInfo.cs
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.AssemblyInfoInputs.cache
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.AssemblyInfo.cs
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/bin/Debug/netcoreapp2.2/dotnet-core.deps.json
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/bin/Debug/netcoreapp2.2/dotnet-core.runtimeconfig.json
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/bin/Debug/netcoreapp2.2/dotnet-core.runtimeconfig.dev.json
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/bin/Debug/netcoreapp2.2/dotnet-core.dll
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/bin/Debug/netcoreapp2.2/dotnet-core.pdb
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.RazorTargetAssemblyInfo.cache
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.dll
+/home/sotomski/webapps/web-rest-api-benchmark/dotnet-core/obj/Debug/netcoreapp2.2/dotnet-core.pdb

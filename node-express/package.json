@@ -4,7 +4,8 @@
   "description": "Web REST API Benchmark",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,9 @@
   },
   "homepage": "https://github.com/mihaigeorge/web-rest-api-benchmark#readme",
   "dependencies": {
-    "bookshelf": "^0.10.3",
-    "express": "^4.15.3",
-    "knex": "^0.13.0",
-    "mysql": "^2.13.0"
+    "bookshelf": "^0.15.1",
+    "express": "^4.17.1",
+    "knex": "^0.17.6",
+    "mysql": "^2.17.1"
   }
 }

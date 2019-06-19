@@ -4,11 +4,11 @@ const Model = bookshelf.Model;
 class User extends Model
 {
 	get tableName() {
-		return 'User';
+		return 'users';
 	}
 
 	countries() {
-		return this.belongsToMany('Country', 'UserCountryMapping', 'userId', 'countryId');
+		return this.belongsToMany('Country', 'user_country_mapping', 'user_id', 'country_id');
 	}
 }
 

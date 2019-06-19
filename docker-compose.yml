@@ -1,0 +1,66 @@
+version: "3"
+services:
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: benchmark
+      MYSQL_USER: benchmark
+      MYSQL_PASSWORD: benchmark
+    ports:
+      - 3306:3306
+
+  java-spring:
+    image: sotomski/benchmark-java-spring
+    build: ./java-spring
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://db:3306/benchmark"
+
+  php-laravel:
+    image: sotomski/benchmark-php-laravel
+    build: ./php-laravel
+#    volumes:
+#      - ./php-laravel:/var/www/html
+    ports:
+      - 8081:80
+    environment:
+      DB_HOST: db
+
+  go-mux:
+    image: sotomski/benchmark-go-mux
+    build: ./go-mux
+    ports:
+      - 8082:8000
+    environment:
+      DB_HOST: db
+
+  node-express:
+    image: sotomski/benchmark-node-express
+    build: ./node-express
+    ports:
+      - 8083:3000
+#    volumes:
+#      - ./node-express:/code
+
+  python-django:
+    image: sotomski/benchmark-python-django
+    build: ./python-django
+    ports:
+      - 8084:8000
+#    volumes:
+#      - ./python-django:/code
+
+  dotnet-core:
+    image: sotomski/benchmark-dotnet-core
+    build: ./dotnet-core
+    ports:
+      - 8085:80
+
+  newman:
+    image: postman/newman_alpine33
+    volumes:
+      - ./postman:/etc/newman
+    command: run -d data_docker.csv benchmark.postman_collection.json

@@ -2,47 +2,54 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
-use App\User;
 use App\Country;
+use App\User;
+use Illuminate\Routing\Controller as BaseController;
+use League\Fractal\Manager;
 
 class Controller extends BaseController
 {
-    public function hello() 
+    private $fractal;
+
+    function __construct(Manager $fractal)
     {
-    	return response()->json(['hello' => 'world']);
+        $this->fractal = $fractal;
+    }
+
+    public function hello()
+    {
+        return response()->json(['hello' => 'world']);
     }
 
     public function compute()
     {
-    	$x = 0; $y = 1;
+        $x = 0; $y = 1;
 
         $max = 10000 + rand(0, 500);
 
-    	for ($i = 0; $i <= $max; $i++) {
-    	    $z = $x + $y;
-    	    $x = $y;
-    	    $y = $z;
-    	}
+        for ($i = 0; $i <= $max; $i++) {
+            $z = $x + $y;
+            $x = $y;
+            $y = $z;
+        }
 
-    	return response()->json(['status' => 'done']);
+        return response()->json(['status' => 'done']);
     }
 
     public function countries()
     {
-    	$data = Country::all();
+        $data = Country::all();
 
-    	return response()->json($data);
+        return response()->json($data);
     }
 
     public function users()
     {
-    	$data = User::whereHas('countries', function($query) {
-    					$query->where('name', 'France');
-    				})
-    				->with('countries')
-    				->get();
-
-    	return response()->json($data);
+        $users = User::whereHas('countries', function($query) {
+            $query->where('name', 'France');
+        })
+            ->with('countries')
+            ->get();
+        return response()->json($users);
     }
 }

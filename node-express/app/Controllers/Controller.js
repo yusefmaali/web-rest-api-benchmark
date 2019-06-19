@@ -24,21 +24,21 @@ class Controller
 	async countries(req, res) {
 		let data = await Country.fetchAll();
 
-		return res.json({ data });
+		return res.json(data);
 	}
 
 	async users(req, res) {
 		let data = await User.query(q => {
-				q.innerJoin('UserCountryMapping', 'User.id', 'UserCountryMapping.userId');
-				q.innerJoin('Country', 'UserCountryMapping.countryId', 'Country.id');
-				q.groupBy('User.id');
-				q.where('Country.name', 'France');
+				q.innerJoin('user_country_mapping', 'users.id', 'user_country_mapping.user_id');
+				q.innerJoin('countries', 'user_country_mapping.country_id', 'countries.id');
+				q.groupBy('users.id');
+				q.where('countries.name', 'France');
 			})
 			.fetchAll({
 			 	withRelated: ['countries']
-			})
+			});
 
-		return res.json({ data });
+		return res.json(data.toJSON({ omitPivot: true }));
 	}
 }
 
