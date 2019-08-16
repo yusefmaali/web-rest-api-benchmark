@@ -1,6 +1,5 @@
 version: "3"
 services:
-
   db:
     image: mysql:5.7
     environment:
@@ -12,7 +11,7 @@ services:
       - 3306:3306
 
   java-spring:
-    image: sotomski/benchmark-java-spring
+    image: yusefmaali/benchmark-rest-api-java-spring
     build: ./java-spring
     ports:
       - 8080:8080
@@ -20,7 +19,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://db:3306/benchmark"
 
   php-laravel:
-    image: sotomski/benchmark-php-laravel
+    image: yusefmaali/benchmark-rest-api-php-laravel
     build: ./php-laravel
 #    volumes:
 #      - ./php-laravel:/var/www/html
@@ -30,7 +29,7 @@ services:
       DB_HOST: db
 
   go-mux:
-    image: sotomski/benchmark-go-mux
+    image: yusefmaali/benchmark-rest-api-go-mux
     build: ./go-mux
     ports:
       - 8082:8000
@@ -38,26 +37,34 @@ services:
       DB_HOST: db
 
   node-express:
-    image: sotomski/benchmark-node-express
+    image: yusefmaali/benchmark-rest-api-node-express
     build: ./node-express
     ports:
       - 8083:3000
 #    volumes:
 #      - ./node-express:/code
 
+  dotnet-core:
+    image: yusefmaali/benchmark-rest-api-dotnet-core
+    build: ./dotnet-core
+    ports:
+      - 8084:80
+
   python-django:
-    image: sotomski/benchmark-python-django
+    image: yusefmaali/benchmark-rest-api-python-django
     build: ./python-django
     ports:
-      - 8084:8000
+      - 8085:8000
 #    volumes:
 #      - ./python-django:/code
 
-  dotnet-core:
-    image: sotomski/benchmark-dotnet-core
-    build: ./dotnet-core
+  python-django-gunicorn:
+    image: yusefmaali/benchmark-rest-api-python-django-gunicorn
+    build: ./python-django-gunicorn
     ports:
-      - 8085:80
+      - 8086:8000
+#    volumes:
+#      - ./python-django:/code
 
   newman:
     image: postman/newman_alpine33

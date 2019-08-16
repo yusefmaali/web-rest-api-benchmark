@@ -8,7 +8,8 @@ I was curious how Golang compare to other languages in terms of performance.
 * Java Spring
 * PHP Laravel
 * Node express
-* Python Django
+* Python Django (with debug web server)
+* Python Django (with gunicorn, 12 workers)
 
 ## App under test
 Each app exposes the same 4 endpoints with different complexity:

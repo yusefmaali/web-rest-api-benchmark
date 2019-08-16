@@ -17,8 +17,9 @@ bench() {
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-laravel.tsv http://${host}:8081/${endpoint}
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-go.tsv http://${host}:8082/${endpoint}
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-node.tsv http://${host}:8083/${endpoint}
-    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python.tsv http://${host}:8084/${endpoint}
-    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-dotnet.tsv http://${host}:8085/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-dotnet.tsv http://${host}:8084/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-debug.tsv http://${host}:8085/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-gunicorn.tsv http://${host}:8086/${endpoint}
 }
 
 bench 10 hello ${host}
