@@ -1,6 +1,7 @@
-dotnet 5260.27
-go 12748.8
-java 6461.7
-laravel 35.0333
-node 4935.17
-python 153.3
+dotnet 6681.2
+go 10821.2
+java 8568.5
+laravel 74.3333
+node 4822.63
+debug 134.2
+gunicorn 1246.7
