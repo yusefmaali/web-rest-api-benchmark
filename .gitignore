@@ -16,3 +16,4 @@ tests/report/
 .idea
 /dotnet-core/out/
 /dotnet-core/bin/
+.py3env

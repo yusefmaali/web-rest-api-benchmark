@@ -66,6 +66,14 @@ services:
 #    volumes:
 #      - ./python-django:/code
 
+  python-falcon:
+    image: yusefmaali/benchmark-rest-api-python-falcon
+    build: ./python-falcon
+    ports:
+      - 8087:8000
+#    volumes:
+#      - ./python-falcon:/code
+
   newman:
     image: postman/newman_alpine33
     volumes:
