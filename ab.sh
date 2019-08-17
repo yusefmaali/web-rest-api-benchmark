@@ -20,6 +20,7 @@ bench() {
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-dotnet.tsv http://${host}:8084/${endpoint}
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-debug.tsv http://${host}:8085/${endpoint}
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-gunicorn.tsv http://${host}:8086/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-falcon.tsv http://${host}:8087/${endpoint}
 }
 
 bench 10 hello ${host}
