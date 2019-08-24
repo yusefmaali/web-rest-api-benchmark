@@ -27,6 +27,9 @@ services:
       - 8081:80
     environment:
       DB_HOST: db
+      DB_DATABASE: benchmark
+      DB_USERNAME: benchmark
+      DB_PASSWORD: benchmark
 
   go-mux:
     image: yusefmaali/benchmark-rest-api-go-mux
@@ -50,11 +53,19 @@ services:
     ports:
       - 8084:80
 
+  python-falcon:
+    image: yusefmaali/benchmark-rest-api-python-falcon
+    build: ./python-falcon
+    ports:
+      - 8085:8000
+#    volumes:
+#      - ./python-falcon:/code
+
   python-django:
     image: yusefmaali/benchmark-rest-api-python-django
     build: ./python-django
     ports:
-      - 8085:8000
+      - 8086:8000
 #    volumes:
 #      - ./python-django:/code
 
@@ -62,17 +73,17 @@ services:
     image: yusefmaali/benchmark-rest-api-python-django-gunicorn
     build: ./python-django-gunicorn
     ports:
-      - 8086:8000
+      - 8087:8000
 #    volumes:
 #      - ./python-django:/code
 
-  python-falcon:
-    image: yusefmaali/benchmark-rest-api-python-falcon
-    build: ./python-falcon
+  python-django-uwsgi:
+    image: yusefmaali/benchmark-rest-api-python-django-uwsgi
+    build: ./python-django-uwsgi
     ports:
-      - 8087:8000
+      - 8088:8000
 #    volumes:
-#      - ./python-falcon:/code
+#      - ./python-django:/code
 
   newman:
     image: postman/newman_alpine33

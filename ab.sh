@@ -1,11 +1,12 @@
 #!/bin/bash
+
 mkdir -p data
 mkdir -p graphs
 
 host=$1
 
 if [[ "$host" = "" ]]; then
-    host=localhost
+    echo "Missing the target host"
     exit 1;
 fi
 
@@ -18,16 +19,16 @@ bench() {
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-go.tsv http://${host}:8082/${endpoint}
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-node.tsv http://${host}:8083/${endpoint}
     ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-dotnet.tsv http://${host}:8084/${endpoint}
-    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-debug.tsv http://${host}:8085/${endpoint}
-    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-gunicorn.tsv http://${host}:8086/${endpoint}
-    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-python-falcon.tsv http://${host}:8087/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-falcon.tsv http://${host}:8085/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-django+debug.tsv http://${host}:8086/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-django+gunicorn.tsv http://${host}:8087/${endpoint}
+    ab -t 30 -c ${concurency} -n 1000000 -g data/${endpoint}-c${concurency}-django+uwsgi.tsv http://${host}:8088/${endpoint}
 }
 
 bench 10 hello ${host}
 bench 10 compute ${host}
-bench 10 countries ${host}
-bench 10 users ${host}
-
+# bench 10 countries ${host}
+# bench 10 users ${host}
 
 rps() {
     endpoint=$1
