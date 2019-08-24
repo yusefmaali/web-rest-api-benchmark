@@ -1,8 +1,9 @@
-dotnet 6960.53
-go 10922.4
-java 8407.57
-laravel 75.7
-node 5301.13
-debug 445.9
-falcon 5837.47
-gunicorn 4023.6
+django+debug 442.5
+django+gunicorn 3890.33
+django+uwsgi 1944.53
+dotnet 6493.4
+falcon 5612.47
+go 10736.4
+java 8745.2
+laravel 72.1667
+node 5303.83
